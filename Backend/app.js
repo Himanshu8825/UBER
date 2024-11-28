@@ -4,6 +4,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./DB/db');
 const authRouter = require('./routes/authRoputes');
+const captainRouter = require('./routes/captainRoutes');
 
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(cookieParser());
 
 // auth routes
 app.use('/auth', authRouter);
+app.use('/captain' , captainRouter);
 
 app.get('/', (req, res) => {
   res.send('Welcome to the server');
